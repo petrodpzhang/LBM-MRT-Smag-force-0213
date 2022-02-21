@@ -557,7 +557,7 @@ __global__ void kernelmacroscopic(int* __restrict__ d_geo, double* __restrict__ 
 			d_uy[index] += cy[q] * d_f[index + Nlattice * q];
 			d_uz[index] += cz[q] * d_f[index + Nlattice * q];
 		}
-		d_uz[index] += d_uz[index] - gravity / 2;
+		d_uz[index] = d_uz[index] - gravity / 2;
 	}
 	else if (d_geo[index] == 2 || d_geo[index] == 5 || d_geo[index] == 6)
 	{
